@@ -4,10 +4,10 @@
     <title>画像アップロード</title>
   </head>
   <body>
-    <h1>File Upload(.jpg or .png)</h1>
-
-    <form action="http://127.0.0.1:3000/<%= %>/uploaded" method="POST" enctype="multipart/form-data">
-      <input type="file" name="file">
+    <h1>Img File Upload(need image)</h1>
+    <%# path = %>
+    <form action="http://127.0.0.1:3000/img/up" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*">
       <input type="submit" value="Upload">
     </form>
 

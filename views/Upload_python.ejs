@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>.py アップロード</title>
+  </head>
+  <body>
+    <h1>Python File Upload(need .py)</h1>
+    <%# path = %>
+    <form action="http://127.0.0.1:3000/py/up" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".py">
+      <input type="submit" value="Upload">
+    </form>
+
+    <form method="POST">
+
+        <input type="submit">
+      </form>
+  </body>
+</html>
