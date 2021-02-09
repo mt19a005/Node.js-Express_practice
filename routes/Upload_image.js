@@ -1,7 +1,7 @@
-var express = require('express');
-var multer = require("multer");
+const express = require('express');
+const multer = require("multer");
 const fs = require('fs');
-var router = express.Router();
+const router = express.Router();
 
 //画像の設定
 const img_Strage = multer.diskStorage({
@@ -29,13 +29,16 @@ router.get('/', (req, res)  => {
     //   noob: "unchi"
     // };
     // res.render("index", param);
-    res.render("Upload_image");
+    let param = {
+      form_path: "img",
+      accept: "image/*"
+    };
+    res.render("Upload_form", param);
 });
 
 //プログラムアップロード後
 router.post('/', img_upload, (req, res) => {
   console.log(req.file);
-  const filename = req.file.originalname;
   res.writeHead(200,{"Content-Type":"image/png"});
   res.end(fs.readFileSync(req.file.path));
 });

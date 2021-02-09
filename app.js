@@ -1,20 +1,20 @@
-var express = require('express');
-var multer = require("multer");
-var Upload_img = require("./routes/Upload_image");
-var Upload_py = require("./routes/Upload_python");
+const express = require('express');
+const multer = require("multer");
+const Upload_img = require("./routes/Upload_image");
+const Upload_py = require("./routes/Upload_python");
 
-var app = express();
+const app = express();
 
 //ejsを使いますよー
 app.set("view engine", "ejs");
 
 //画像アップロード
-app.use('/img/up', Upload_img);
+app.use('/img/*', Upload_img);
 
 //pythonアップロード
-app.use('/py/up', Upload_py);
+app.use('/py/*', Upload_py);
 
-var server = app.listen(3000, () => {
+const server = app.listen(3000, () => {
     console.log("listening at port %s", server.address().port);
 });
 //よくわからん
